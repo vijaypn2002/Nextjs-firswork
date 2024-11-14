@@ -1,5 +1,7 @@
 // Components/Navbar.js
-"use client";
+"use client"; // Ensure this is at the top of the file
+
+import React from 'react';
 
 import Link from 'next/link';
 import { useState } from 'react';
@@ -11,110 +13,119 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const styles = {
-    navbar: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '1rem 2rem',
-      backgroundColor: '#0e0b1a',
-      zIndex: 1000,
-    },
-    logo: {
-      display: 'flex',
-      alignItems: 'center',
-      color: 'white',
-      fontWeight: 'bold',
-    },
-    logoImage: {
-      height: '30px',
-      marginRight: '0.5rem',
-    },
-    navLinks: {
-      listStyle: 'none',
-      display: 'flex',
-      gap: '1.5rem',
-    },
-    link: {
-      color: 'white',
-      textDecoration: 'none',
-      fontWeight: '500',
-    },
-    loginButton: {
-      backgroundColor: '#6c63ff',
-      color: 'white',
-      padding: '0.5rem 1rem',
-      border: 'none',
-      borderRadius: '5px',
-      cursor: 'pointer',
-    },
-    mobileMenuButton: {
-      display: 'none',
-      color: 'white',
-      fontSize: '1.5rem',
-      cursor: 'pointer',
-    },
-    mobileNavLinks: {
-      display: isMobileMenuOpen ? 'flex' : 'none',
-      flexDirection: 'column',
-      alignItems: 'center',
-      position: 'absolute',
-      top: '4rem',
-      left: 0,
-      width: '100%',
-      backgroundColor: '#0e0b1a',
-      padding: '1rem 0',
-      textAlign: 'center',
-      zIndex: 999,
-    },
-    mobileLink: {
-      color: 'white',
-      textDecoration: 'none',
-      padding: '0.5rem 1rem',
-      fontWeight: '500',
-      width: '100%',
-      textAlign: 'center',
-    },
-    // Media Query for Mobile
-    '@media (max-width: 768px)': {
-      navLinks: {
-        display: 'none', // Hide navLinks in mobile view
-      },
-      mobileMenuButton: {
-        display: 'block', // Show mobile menu button
-      },
-      navbar: {
-        justifyContent: 'space-between', // Adjust layout for mobile
-      },
-    },
-  };
-
   return (
     <>
-      <nav style={styles.navbar}>
-        <div style={styles.logo}>
-          <img src="/images/logo.png" alt="logo" style={styles.logoImage} /> 
+      <style jsx>{`
+        .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 2rem;
+          background-color: #0e0b1a;
+          z-index: 1000;
+        }
+        .logo {
+          display: flex;
+          align-items: center;
+          color: white;
+          font-weight: bold;
+        }
+        .logoImage {
+          height: 30px;
+          margin-right: 0.5rem;
+        }
+        .navLinks {
+          list-style: none;
+          display: flex;
+          gap: 1.5rem;
+        }
+        .link {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+        .link:hover {
+          color: #6c63ff;
+        }
+        .loginButton {
+          background-color: #6c63ff;
+          color: white;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+        .loginButton:hover {
+          background-color: #5a54e1;
+        }
+        .mobileMenuButton {
+          display: none;
+          color: white;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+        .mobileNavLinks {
+          display: ${isMobileMenuOpen ? 'flex' : 'none'};
+          flex-direction: column;
+          align-items: center;
+          position: absolute;
+          top: 4rem;
+          left: 0;
+          width: 100%;
+          background-color: #0e0b1a;
+          padding: 1rem 0;
+          text-align: center;
+          z-index: 999;
+        }
+        .mobileLink {
+          color: white;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+          width: 100%;
+          text-align: center;
+          transition: color 0.3s ease;
+        }
+        .mobileLink:hover {
+          color: #6c63ff;
+        }
+        /* Media Query for Mobile */
+        @media (max-width: 768px) {
+          .navLinks {
+            display: none;
+          }
+          .mobileMenuButton {
+            display: block;
+          }
+        }
+      `}</style>
+
+      <nav className="navbar">
+        <div className="logo">
+          <img src="/images/logo.png" alt="logo" className="logoImage" /> 
         </div>
-        <div style={styles.mobileMenuButton} onClick={toggleMobileMenu}>
+        <div className="mobileMenuButton" onClick={toggleMobileMenu}>
           <span style={{ fontSize: '24px', cursor: 'pointer' }}>☰</span>
         </div>
-        <ul style={styles.navLinks} className="desktop-nav">
-          <li><Link href="/courses" legacyBehavior><a style={styles.link}>Courses</a></Link></li>
-          <li><Link href="/about" legacyBehavior><a style={styles.link}>About</a></Link></li>
-          <li><Link href="/testimonials" legacyBehavior><a style={styles.link}>Testimonials</a></Link></li>
-          <li><Link href="/contact" legacyBehavior><a style={styles.link}>Contact</a></Link></li>
+        <ul className="navLinks">
+          <li><Link href="/courses" legacyBehavior><a className="link">Courses</a></Link></li>
+          <li><Link href="/about" legacyBehavior><a className="link">About</a></Link></li>
+          <li><Link href="/testimonials" legacyBehavior><a className="link">Testimonials</a></Link></li>
+          <li><Link href="/contact" legacyBehavior><a className="link">Contact</a></Link></li>
         </ul>
-        <ul style={styles.mobileNavLinks}>
-          <li><Link href="/courses" legacyBehavior><a style={styles.mobileLink}>Courses</a></Link></li>
-          <li><Link href="/about" legacyBehavior><a style={styles.mobileLink}>About</a></Link></li>
-          <li><Link href="/testimonials" legacyBehavior><a style={styles.mobileLink}>Testimonials</a></Link></li>
-          <li><Link href="/contact" legacyBehavior><a style={styles.mobileLink}>Contact</a></Link></li>
+        <ul className="mobileNavLinks">
+          <li><Link href="/courses" legacyBehavior><a className="mobileLink">Courses</a></Link></li>
+          <li><Link href="/about" legacyBehavior><a className="mobileLink">About</a></Link></li>
+          <li><Link href="/testimonials" legacyBehavior><a className="mobileLink">Testimonials</a></Link></li>
+          <li><Link href="/contact" legacyBehavior><a className="mobileLink">Contact</a></Link></li>
         </ul>
-        <button style={styles.loginButton}>LOGIN</button>
+        <button className="loginButton">LOGIN</button>
       </nav>
       <div style={{ height: '80px' }} /> {/* Spacer to add gap between Navbar and HeroSection */}
     </>

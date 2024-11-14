@@ -162,14 +162,14 @@ const HeroSection = () => {
           <span>(1,280 students)</span>
         </div>
         <h3 className="course-features-heading">Course Features</h3>
-        <ul className="feature-list">
-          <li>Free and Accessible</li>
-          <li>Hands-On Practice</li>
-          <li>Comprehensive Curriculum</li>
-          <li>Interview Preparation</li>
-          <li>Detailed Explanations</li>
-          <li>Community Support</li>
-        </ul>
+<ul className="feature-list">
+  <li>Free and Accessible</li>
+  <li>Hands-On Practice</li>
+  <li>Comprehensive Curriculum</li>
+  <li>Interview Preparation</li>
+  <li>Detailed Explanations</li>
+  <li>Community Support</li>
+</ul>
 
         {/* Course Curriculum Section */}
         <div className="course-curriculum-container">
@@ -260,9 +260,9 @@ const HeroSection = () => {
           display: inline-flex;
           align-items: center;
           background-color: #ffffff;
-          color: #0e0b1a;
+          color: #3A4BD5;
           padding: 0.75rem 1.25rem;
-          border-radius: 10px;
+          border-radius: 20px;
           font-weight: bold;
           text-decoration: none;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -287,16 +287,32 @@ const HeroSection = () => {
           font-size: 1.5rem;
           margin-top: 2rem;
         }
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1.5rem;
+    font-size: 1rem;
+    padding: 0;
+    list-style: none;
+    color: #a1a1b3;
+    margin-top: 1rem;
+  }
 
-        .feature-list {
-          display: flex;
-          gap: 0.75rem;
-          font-size: 0.9rem;
-          list-style-type: none;
-          padding: 0;
-          flex-wrap: wrap;
-          margin-top: 1rem;
-        }
+  .feature-list li {
+    position: relative;
+    padding: 0 1.5rem; /* Add space on both sides */
+  }
+
+  /* Adding dots on both sides except for the first and last items */
+    .feature-list li:not(:first-child)::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #a1a1b3;
+  }
+
+
 
         .right-card {
           position: sticky;
