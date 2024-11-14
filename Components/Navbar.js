@@ -108,7 +108,7 @@ const Navbar = () => {
 
       <nav className="navbar">
         <div className="logo">
-          <img src="/images/logo.png" alt="logo" className="logoImage" /> 
+          <img src="/images/Logo.png" alt="logo" className="logoImage" /> 
         </div>
         <div className="mobileMenuButton" onClick={toggleMobileMenu}>
           <span style={{ fontSize: '24px', cursor: 'pointer' }}>☰</span>
