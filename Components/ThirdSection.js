@@ -1,10 +1,10 @@
-// Components/ThirdSection.js
+
 "use client";
 
 import React from 'react';
 import Image from 'next/image';
 
-const codeImage = '/images/ThirdSection.png'; // Adjust this path if necessary
+const codeImage = '/images/ThirdSection.png'; 
 
 const ThirdSection = () => {
   return (

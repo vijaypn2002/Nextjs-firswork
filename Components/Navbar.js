@@ -1,5 +1,5 @@
-// Components/Navbar.js
-"use client"; // Ensure this is at the top of the file
+
+"use client"; 
 
 import React from 'react';
 
@@ -127,7 +127,7 @@ const Navbar = () => {
         </ul>
         <button className="loginButton">LOGIN</button>
       </nav>
-      <div style={{ height: '80px' }} /> {/* Spacer to add gap between Navbar and HeroSection */}
+      <div style={{ height: '80px' }} /> 
     </>
   );
 };

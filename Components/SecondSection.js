@@ -1,9 +1,9 @@
-"use client"; // This makes the component a client component
+"use client"; 
 
 import React from 'react';
 import Image from 'next/image';
 
-const instructorImage = '/images/SecondSection.png'; // Direct path to the image
+const instructorImage = '/images/SecondSection.png'; 
 
 const SecondSection = () => {
   return (
@@ -35,8 +35,8 @@ const SecondSection = () => {
           <Image
             src={instructorImage}
             alt="Instructor"
-            width={300}  // Specify width for desktop
-            height={300} // Specify height for desktop
+            width={300}  
+            height={300} 
             style={{ borderRadius: '10px' }}
           />
         </div>

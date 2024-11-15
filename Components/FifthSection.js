@@ -1,10 +1,10 @@
-// Components/FifthSection.js
+
 "use client";
 
 import React from 'react';
 import Image from 'next/image';
 
-const certificateImage = '/images/Certificate.png'; // Adjust this path if necessary
+const certificateImage = '/images/Certificate.png'; 
 
 const FifthSection = () => {
   return (

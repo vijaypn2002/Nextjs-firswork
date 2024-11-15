@@ -1,4 +1,4 @@
-"use client"; // This makes the component a client component
+"use client"; 
 
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -171,7 +171,7 @@ const HeroSection = () => {
   <li>Community Support</li>
 </ul>
 
-        {/* Course Curriculum Section */}
+       
         <div className="course-curriculum-container">
           <h2 className="curriculum-heading">Course Curriculum</h2>
           {curriculumData.map((weekData, index) => (
@@ -217,7 +217,7 @@ const HeroSection = () => {
         <button className="start-button">Start Learning</button>
       </div>
 
-      {/* Internal CSS */}
+    
       <style jsx>{`
         .hero-container {
           display: flex;
